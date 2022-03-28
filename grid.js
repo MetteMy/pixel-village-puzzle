@@ -20,33 +20,25 @@ function preload() {
     //console.log("tempStylesheet/png/Tiles/" + String(i) + ".png");
     //"IndustrialTiles/1 Tiles" + "IndustrialTile_" + String(i) + ".png"
     tileSheet.push(img);
-
   }
   background = loadImage("tempStylesheet/png/BG/BG.png");
-}
-function setup() {
-  createCanvas(windowWidth, windowHeight);
-  currentMap = level00;
-  speed = 10;
-  playerYSpeed = 0;
-  playerXSpeed = speed;
-  isJumping = false;
-  isColliding = false;
-  drawNewMap();
-  console.log(tiles);
-  
-  playerX = tilePosX[currentMap.playerStartPos];
-  playerY = tilePosY[currentMap.playerStartPos];
-  rect(playerX, playerY, tileW, tileW);
-  
-}
-
-function draw() {
-  player();
-  
 
 
+  for (let i = 1; i < 8; i++) {
+    let playerImg = loadImage("adventure_girl/Run (" + String(i) + ").png");
+    playerRun.push(playerImg);
+  }
+  playerIdle.push(loadImage("adventure_girl/Idle (1).png"));
+  console.log("idle image"+playerIdle);
+  
+  for (let i = 1; i < 9; i++) {
+    let playerImg = loadImage("adventure_girl/Jump (" + String(i) + ").png");
+    playerJump.push(playerImg);
+  }
 }
+
+
+
 function collision() {
 
   let leftPlayerX = Math.floor(playerX / tileW);
@@ -56,7 +48,7 @@ function collision() {
   let upperPlayerY = Math.floor(playerY / tileW);
 
   let lowerPlayerY = Math.floor((playerY + tileW) / tileW);
-
+/*
 
   console.log("upperleft" + currentMap.gameMap[(upperPlayerY * mapW) + leftPlayerX])
   console.log("upperright" + currentMap.gameMap[(upperPlayerY * mapW) + rightPlayerX])
@@ -64,7 +56,7 @@ function collision() {
   console.log("lowerright" + currentMap.gameMap[(lowerPlayerY * mapW) + rightPlayerX])
   console.log("oldX: " + oldPlayerX + " newX: " + playerX);
   console.log("oldY: " + oldPlayerY + " newY: " + playerY);
-
+*/
   let upperLeft = currentMap.gameMap[(upperPlayerY * mapW) + leftPlayerX];
   let upperRight = currentMap.gameMap[(upperPlayerY * mapW) + rightPlayerX];
   let lowerLeft = currentMap.gameMap[(lowerPlayerY * mapW) + leftPlayerX];
@@ -130,50 +122,34 @@ class Tile {
 }
 
 
-function player() {
-  
 
   
-if(keyIsPressed){
-  
-    if(keyIsDown(LEFT_ARROW)) {
-      playerX -= playerXSpeed;
-    }
-    if (keyIsDown(RIGHT_ARROW)) {
-      playerX += playerXSpeed;
 
-    }
-    if (keyIsDown(UP_ARROW)) {
-      playerY -= playerYSpeed;
-      
-    }
-    if (keyIsDown(DOWN_ARROW)) {
-      playerY += playerYSpeed;
-      
-    }
-    update();
-  }
-    
-  }
-  
-function update(){
-  updateMap();
-  collision();
-  changeMap();
-}
 
 
 function changeMap() {
   //console.log(currentMap.nextRoom);
   
-  if (playerX < 0 ){
+  if (playerX < 0 || playerX > width || playerY < 0) {
+  if (playerX < 0 ){ // left
+    neighborNr = 0;
+  }
+  if (playerY < 0){ // up
+    neighborNr = 1;
+  }
+  if (playerX > width) { // right 
+    neighborNr = 2;
+  } 
+  if (playerY > height){ // down
+    neighborNr = 4;
+  }
     image(background, 0, 0, width, height);
     console.log(currentMap.nextRoom[2]);
-    let nextMap = currentMap.nextRoom[2]
+    let nextMap = currentMap.nextRoom[2];
     currentMap = eval(nextMap);
     drawNewMap();
-  }
-   // || playerX < 0 || playerY > height || playerY < 0) { 
+  
+}
 
 
   
@@ -202,8 +178,8 @@ function drawNewMap() {
   rect(tilePosX[currentMap.npcPos], tilePosY[currentMap.npcPos], tileW, tileW);
   playerX = tilePosX[currentMap.playerStartPos];
   playerY = tilePosY[currentMap.playerStartPos];
-  rect(playerX, playerY, tileW, tileW);
-
+  //rect(playerX, playerY, tileW, tileW);
+  playerAnimation();
 
 }
 
@@ -216,6 +192,7 @@ function updateMap(){
   // Det her er vores npc for nu
   rect(tilePosX[currentMap.npcPos], tilePosY[currentMap.npcPos], tileW, tileW);
   
-  rect(playerX, playerY, tileW, tileW);
+  //rect(playerX, playerY, tileW, tileW);
+  playerAnimation();
 }
 

@@ -1,30 +1,26 @@
 
-
 function setup() {
-    
-    //updateGame();
+  createCanvas(windowWidth, windowHeight);
+  currentMap = level00;
+  speed = 10;
+  playerYSpeed = 0;
+  playerXSpeed = speed;
+  playerState = playerRun;
+  
+   
+  playerX = tilePosX[currentMap.playerStartPos];
+  playerY = tilePosY[currentMap.playerStartPos];
+  //rect(playerX, playerY, tileW, tileW);
+  drawNewMap();
 }
 
 
-
-
-/*
-function draw(){
-  
-  if (keyIsDown){
-    // det her er midlertidigt, jeg skulle bare lige tjekke at man kunne skifte level uden reload
-      if(keyCode == LEFT_ARROW){
-          currentMap = level00;
-      }
-      if(keyCode == RIGHT_ARROW){
-          currentMap = level01;
-      }
-      
+function draw() {
+  playerMovement();
   }
-  rect(tilePosX[4], tilePosY[4], tileW, tileW)
-}*/
 
-function updateGame(){
-
-  drawMap()
+function update(){
+    updateMap();
+    collision();
+    changeMap();
 }
