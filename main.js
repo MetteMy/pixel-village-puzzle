@@ -1,8 +1,8 @@
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  currentMap = level00;
-  speed = 10;
+  currentMap = port;
+  speed = 5;
   playerYSpeed = 0;
   playerXSpeed = speed;
   playerState = playerRun;
@@ -19,8 +19,9 @@ function draw() {
   playerMovement();
   }
 
-function update(){
+function update(){ // update runs when moving
     updateMap();
     collision();
     changeMap();
+
 }
