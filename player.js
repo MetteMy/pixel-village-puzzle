@@ -13,7 +13,6 @@ function playerMovement() {
         if (keyIsDown(LEFT_ARROW)) {
             playerState = playerRun;
             playerX -= playerXSpeed;
-
         }
         if (keyIsDown(RIGHT_ARROW)) {
             playerState = playerRun;
@@ -25,7 +24,7 @@ function playerMovement() {
         }
         if (keyIsDown(DOWN_ARROW)) {
             playerY += playerYSpeed;
-
+            
         }
 
         update();
