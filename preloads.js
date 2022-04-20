@@ -1,4 +1,4 @@
-let houses = [];
+let objects = [];
 
 function preload() {
     for (let i = 0; i < 11; i++) {
@@ -10,8 +10,10 @@ function preload() {
       tileSheet.push(img);
     }
     background = loadImage("tempStylesheet/png/BG/BG.png");
+    lumberJack = loadImage("craftpix-891178-free-3-character-sprite-sheets-pixel-art/1 Woodcutter/Woodcutter.png")
+    
   
-  
+
     for (let i = 1; i < 8; i++) {
       let playerImg = loadImage("adventure_girl/Run (" + String(i) + ").png");
       playerRun.push(playerImg);
@@ -23,11 +25,11 @@ function preload() {
       let playerImg = loadImage("adventure_girl/Jump (" + String(i) + ").png");
       playerJump.push(playerImg);
     }
-      //houses 
+      //objects
       
-    for (let i = 1; i < 6; i++) {
-      let houseImg = loadImage("mapPack/2 Objects/Houses/" + String(i)+".png"); 
-      houses.push(houseImg);
-      
+    for (let i = 0; i < 31; i++) {
+      let objImg = loadImage("mapPack/2 Objects/Houses/" + String(i)+".png"); 
+      objects.push(objImg);
+
     }    
   }
