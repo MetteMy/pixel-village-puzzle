@@ -10,9 +10,11 @@ function preload() {
       tileSheet.push(img);
     }
     background = loadImage("tempStylesheet/png/BG/BG.png");
-    lumberJack = loadImage("craftpix-891178-free-3-character-sprite-sheets-pixel-art/1 Woodcutter/Woodcutter.png")
-    
-  
+    lumberJack = loadImage("craftpix-891178-free-3-character-sprite-sheets-pixel-art/1 Woodcutter/Woodcutter.png");
+    steamDude = loadImage("craftpix-891178-free-3-character-sprite-sheets-pixel-art/3 SteamMan/SteamMan.png");
+    woman = loadImage("craftpix-781111-free-villagers-sprite-sheets-pixel-art/4 Woman/Woman.png");
+    girl = loadImage("craftpix-781111-free-villagers-sprite-sheets-pixel-art/6 Girl/Girl.png");
+    oldMan = loadImage("craftpix-781111-free-villagers-sprite-sheets-pixel-art/1 Old_man/Old_man.png");
 
     for (let i = 1; i < 8; i++) {
       let playerImg = loadImage("adventure_girl/Run (" + String(i) + ").png");
