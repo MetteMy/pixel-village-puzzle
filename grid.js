@@ -4,6 +4,7 @@ let tileSheet = [];
 let tilePosX = [];
 let tilePosY = [];
 let currentMap = [];
+let currentDialogue = [];
 let background;
 let playerX, playerY;
 let oldPlayerX, oldPlayerY;
@@ -159,9 +160,9 @@ function drawNewMap() {
   displayNPC();
   playerX = tilePosX[currentMap.playerStartPos];
   playerY = tilePosY[currentMap.playerStartPos];
-  //rect(playerX, playerY, tileW, tileW);
+  
   playerAnimation();
-  console.log("currentmap " + currentMap);
+  
 
 }
 
@@ -171,10 +172,7 @@ function updateMap() {
   for (let i = 0; i < tiles.length; i++) {
     tiles[i].render();
   }
-  // Det her er vores npc for nu
   displayNPC();
-
-  //rect(playerX, playerY, tileW, tileW);
   playerAnimation();
 }
 
@@ -182,25 +180,20 @@ function updateMap() {
 function displayNPC() {
   if (currentMap == forest) {
     image(lumberJack, tilePosX[currentMap.npcPos], tilePosY[currentMap.npcPos], tileW, tileW);
-    //rect(tilePosX[currentMap.npcPos], tilePosY[currentMap.npcPos], tileW, tileW);
   }
   if (currentMap == port) {
-    image(steamDude, tilePosX[currentMap.npcPos], tilePosY[currentMap.npcPos], tileW, tileW);
-    //rect(tilePosX[currentMap.npcPos], tilePosY[currentMap.npcPos], tileW, tileW);
+    image(steamDude, tilePosX[currentMap.npcPos], tilePosY[currentMap.npcPos], tileW, tileW); 
+    
   }
   if (currentMap == town) {
     image(girl, tilePosX[currentMap.npcPos], tilePosY[currentMap.npcPos], tileW, tileW);
-    //rect(tilePosX[currentMap.npcPos], tilePosY[currentMap.npcPos], tileW, tileW);
+    
   }
   if (currentMap == mine) {
     image(woman, tilePosX[currentMap.npcPos], tilePosY[currentMap.npcPos], tileW, tileW);
-    //rect(tilePosX[currentMap.npcPos], tilePosY[currentMap.npcPos], tileW, tileW);
   }
   if (currentMap == ruin) {
     image(oldMan, tilePosX[currentMap.npcPos], tilePosY[currentMap.npcPos], tileW, tileW);
     //rect(tilePosX[currentMap.npcPos], tilePosY[currentMap.npcPos], tileW, tileW);
   }
-  /*else {
-    rect(tilePosX[currentMap.npcPos], tilePosY[currentMap.npcPos], tileW, tileW);
-  }*/
 }
