@@ -17,8 +17,8 @@ function setup() {
 
 function draw() {
   playerMovement();
-  }
-
+  npcDistance()
+}
 function update(){ // update runs when moving
     updateMap();
     collision();

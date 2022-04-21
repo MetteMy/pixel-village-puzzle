@@ -16,8 +16,6 @@ let tiles = [];
 
 
 
-
-
 function collision() {
 
   let leftPlayerX = Math.floor(playerX / tileW);
@@ -176,6 +174,13 @@ function updateMap() {
   playerAnimation();
 }
 
+function npcDistance() {
+  distance = dist(tilePosX[currentMap.npcPos], tilePosY[currentMap.npcPos], playerX, playerY);
+  if (distance < 200) {
+    console.log(distance);
+    rect(width / 2 - 150 / 2, height / 4 * 3 - 50 / 2, 150, 50);
+  }
+}//calculates player distance from npc so dialogue prompt shows up and is called
 
 function displayNPC() {
   if (currentMap == forest) {
