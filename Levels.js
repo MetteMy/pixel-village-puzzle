@@ -25,6 +25,7 @@ town = {
     0, 9, 2, 0, 0, 0, 0, 0, 1, 7, 2, 10, 0, 8, 9, 4, 7, 0, 1, 0,
     
     ],
+    npcName: "girl",
     npcPos: 34, 
     playerStartPos: 70, 
 
@@ -58,6 +59,7 @@ forest = {
     0, 9, 11, 0, 0, 0, 0, 0, 13, 11, 11, 0, 0, 0, 0, 0, 18, 0, 11, 0,
     
     ],
+    npcName: "lumberJack",
     npcPos: 85, 
     playerStartPos: 25, 
     
@@ -90,6 +92,7 @@ objects:[
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
 ],
     npcPos: 24, 
+    npcName: "oldMan",
     playerStartPos: 75, 
     
     nextRoom: ["ruin", "ruin", "ruin", "town"],
@@ -118,6 +121,7 @@ mine = {
     0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 0, 0, 0, 0, 0,
     
     ], 
+    npcName: "woman",
     npcPos: 35, 
     playerStartPos: 45, 
     
@@ -146,6 +150,7 @@ port = {
     0, 0, 0, 0, 0, 0, 23, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     
     ], 
+    npcName: "steamDude",
     npcPos: 35, 
     playerStartPos: 25, 
     

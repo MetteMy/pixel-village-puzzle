@@ -67,24 +67,5 @@ function playerAnimation() {
 
     image(playerState, playerX, playerY, tileW, tileW, frame * playerW, 0, playerW, playerH);
 
-
-
-
-    /*
-    
-        if (frame < playerState.length - 1) {
-            frame++
-    
-        }
-        else {
-            frame = 0;
-    
-        }
-        //console.log("frame " + frame);
-    
-    
-        image(playerState[frame], playerX, playerY, tileW, tileW);
-    
-    */
 }
 

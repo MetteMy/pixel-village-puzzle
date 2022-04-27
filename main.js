@@ -7,6 +7,9 @@ function setup() {
   playerYSpeed = 0;
   playerXSpeed = speed;
   playerState = graveRobberIdle;
+  progress = 0;
+  inventory = "nothing";
+   
   rectMode(CENTER);
   textAlign(CENTER);
 
@@ -20,6 +23,7 @@ function setup() {
 function draw() {
   playerMovement();
   npcDistance()
+  displayMissionAndInventory();
 }
 function update() { // update runs when moving
   updateMap();
