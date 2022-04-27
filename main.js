@@ -1,4 +1,4 @@
-let = startGameBtn
+let startGameBtn;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
