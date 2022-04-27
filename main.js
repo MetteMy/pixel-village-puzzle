@@ -1,7 +1,7 @@
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  currentMap = town;
+  currentMap = port;
   speed = 4;
   playerYSpeed = 0;
   playerXSpeed = speed;
