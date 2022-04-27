@@ -19,7 +19,7 @@ let tiles = [];
 
 function collision() {
 
-  let leftPlayerX = Math.floor((playerX + (playerW)/2)/ tileW);
+  let leftPlayerX = Math.floor((playerX + (playerW) / 2) / tileW);
 
   let rightPlayerX = Math.floor((playerX + playerW) / tileW);
 
@@ -159,15 +159,14 @@ function drawNewMap() {
   displayNPC();
   playerX = tilePosX[currentMap.playerStartPos];
   playerY = tilePosY[currentMap.playerStartPos];
-  
+
   playerAnimation();
-  
+
 
 }
 
 function updateMap() {
 
-  image(background, 0, 0, width, height);
   for (let i = 0; i < tiles.length; i++) {
     tiles[i].render();
   }
@@ -180,40 +179,40 @@ function npcDistance() {
   if (distance < 50) {
     strokeWeight(4);
     fill(243, 223, 160); //parchment
-    rect(width / 2 - 150 / 2, height / 4 * 3 - 50 / 2, 150, 50);
+    rect(width / 2, height / 4 * 3, 100, 50);
     fill(0);
     textSize(20);
-    text("Press E", width / 2 - 34, height / 4 * 3 + 6);
+    text("Press E", width / 2, height / 4 * 3);
     if (keyIsDown(69)) {//e
       npcDialogue();
-      }
+    }
   }
 }//calculates player distance from npc so dialogue prompt shows up and can be called
 
 
-function npcDialogue(){
+function npcDialogue() {
   let npcText;
-  if (currentMap === forest){
+  if (currentMap === forest) {
     npcText = lumberJackDialogue[0];
   }
-  if (currentMap === town){
+  if (currentMap === town) {
     npcText = girlDialogue[0];
   }
-  if (currentMap === mine){
+  if (currentMap === mine) {
     npcText = womanDialogue[0];
   }
-  if (currentMap === port){
+  if (currentMap === port) {
     npcText = steamDudeDialogue[0];
   }
-  if (currentMap === ruin){
+  if (currentMap === ruin) {
     npcText = oldManDialogue[0];
   }
 
   fill(240, 215, 155);
-      rect(width / 2 - 550 / 2, height / 4 * 3 - 250 / 2, 550, 260);
-      fill(0);
-      text(npcText, width / 2 - 550 / 2 , height / 4 * 3 - 250 / 2 , 550, 260);
-      
+  rect(width / 2, height / 4 * 3, 550, 260);
+  fill(0);
+  text(npcText, width / 2, height / 4 * 3, 530, 240);
+
 }
 
 
@@ -222,12 +221,12 @@ function displayNPC() {
     image(lumberJack, tilePosX[currentMap.npcPos], tilePosY[currentMap.npcPos], tileW, tileW);
   }
   if (currentMap == port) {
-    image(steamDude, tilePosX[currentMap.npcPos], tilePosY[currentMap.npcPos], tileW, tileW); 
-    
+    image(steamDude, tilePosX[currentMap.npcPos], tilePosY[currentMap.npcPos], tileW, tileW);
+
   }
   if (currentMap == town) {
     image(girl, tilePosX[currentMap.npcPos], tilePosY[currentMap.npcPos], tileW, tileW);
-    
+
   }
   if (currentMap == mine) {
     image(woman, tilePosX[currentMap.npcPos], tilePosY[currentMap.npcPos], tileW, tileW);
