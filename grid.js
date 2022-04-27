@@ -178,11 +178,20 @@ function updateMap() {
 
 function npcDistance() {
   distance = dist(tilePosX[currentMap.npcPos], tilePosY[currentMap.npcPos], playerX, playerY);
-  if (distance < 200) {
-    console.log(distance);
+  if (distance < 50) {
+    strokeWeight(4);
+    fill(243, 223, 160); //parchment
     rect(width / 2 - 150 / 2, height / 4 * 3 - 50 / 2, 150, 50);
+    fill(0);
+    textSize(20);
+    text("Press E", width / 2 - 34, height / 4 * 3 + 6);
+    if (keyIsDown(69)) {//e
+      fill(240, 215, 155);
+      rect(width / 2 - 550 / 2, height / 4 * 3 - 250 / 2, 550, 260);
+      fill(0);
+      }
   }
-}//calculates player distance from npc so dialogue prompt shows up and is called
+}//calculates player distance from npc so dialogue prompt shows up and can be called
 
 function displayNPC() {
   if (currentMap == forest) {

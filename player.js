@@ -10,22 +10,22 @@ function playerMovement() {
     playerState = playerIdle;
 
     if (keyIsPressed == true) {
-        if (keyIsDown(LEFT_ARROW)) {
+        if (keyIsDown(65) || keyIsDown(37)) {//Left
             playerState = playerRun;
             playerX -= playerXSpeed;
         }
-        if (keyIsDown(RIGHT_ARROW)) {
+        if (keyIsDown(68) || keyIsDown(39)) {//Right
             playerState = playerRun;
             playerX += playerXSpeed;
         }
-        if (keyIsDown(UP_ARROW)) {
+        if (keyIsDown(87) || keyIsDown(38)) {//Up
             playerState = playerJump;
             playerY -= playerYSpeed;
         }
-        if (keyIsDown(DOWN_ARROW)) {
+        if (keyIsDown(83) || keyIsDown(40)) {//Down
             playerY += playerYSpeed;
-            
-        }
+
+        }//WASD & Arrows
 
         update();
         updated = false;
