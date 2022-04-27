@@ -2,10 +2,10 @@
 function setup() {
   createCanvas(windowWidth, windowHeight);
   currentMap = town;
-  speed = 5;
+  speed = 4;
   playerYSpeed = 0;
   playerXSpeed = speed;
-  playerState = playerRun;
+  playerState = graveRobberIdle;
   
    
   playerX = tilePosX[currentMap.playerStartPos];

@@ -1,5 +1,6 @@
 
 let mapW = 20, mapH = 9, tileW = 64; objectW = 128;
+let playerH = 64, playerW = 32;
 let tileSheet = [];
 let tilePosX = [];
 let tilePosY = [];
@@ -18,13 +19,13 @@ let tiles = [];
 
 function collision() {
 
-  let leftPlayerX = Math.floor(playerX / tileW);
+  let leftPlayerX = Math.floor((playerX + (playerW)/2)/ tileW);
 
-  let rightPlayerX = Math.floor((playerX + tileW) / tileW);
+  let rightPlayerX = Math.floor((playerX + playerW) / tileW);
 
   let upperPlayerY = Math.floor(playerY / tileW);
 
-  let lowerPlayerY = Math.floor((playerY + tileW) / tileW);
+  let lowerPlayerY = Math.floor((playerY + playerH) / tileW);
 
 
 

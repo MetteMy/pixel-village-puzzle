@@ -7,24 +7,26 @@ let updated = false;
 
 function playerMovement() {
 
-    playerState = playerIdle;
+    playerState = graveRobberIdle;
 
     if (keyIsPressed == true) {
         if (keyIsDown(LEFT_ARROW)) {
-            playerState = playerRun;
+            playerState = graveRobberWalkL;;
             playerX -= playerXSpeed;
         }
         if (keyIsDown(RIGHT_ARROW)) {
-            playerState = playerRun;
+            playerState = graveRobberWalkR;;
             playerX += playerXSpeed;
         }
         if (keyIsDown(UP_ARROW)) {
-            playerState = playerJump;
+            playerState = graveRobberWalkR;
             playerY -= playerYSpeed;
         }
         if (keyIsDown(DOWN_ARROW)) {
+            playerState = graveRobberWalkL;
             playerY += playerYSpeed;
-            
+
+
         }
 
         update();
@@ -32,7 +34,7 @@ function playerMovement() {
     }
     if (keyIsPressed == false) {
         if (updated == false) {
-            playerState = playerIdle;
+            playerState = graveRobberIdle;
             update();
             updated = true;
         }
@@ -49,21 +51,42 @@ function playerMovement() {
 }
 
 function playerAnimation() {
-
-
-    if (frame < playerState.length - 1) {
-        frame++
-
-    }
-    else {
+    //playerState.length - 1
+       if (playerState == graveRobberWalkR || playerState == graveRobberWalkL){
+        if (frame < 5) {
+            if(frameCount % 4 == 0){
+            frame ++
+            }
+        }
+        else {
+            frame = 0;
+    
+        }
+    } else {
         frame = 0;
-
     }
-    //console.log("frame " + frame);
+  
+
+    image(playerState, playerX, playerY, tileW, tileW, frame * playerW, 0, playerW, playerH);
 
 
-    image(playerState[frame], playerX, playerY, tileW, tileW);
 
 
+    /*
+    
+        if (frame < playerState.length - 1) {
+            frame++
+    
+        }
+        else {
+            frame = 0;
+    
+        }
+        //console.log("frame " + frame);
+    
+    
+        image(playerState[frame], playerX, playerY, tileW, tileW);
+    
+    */
 }
 
