@@ -1,9 +1,11 @@
 
 let mapW = 20, mapH = 9, tileW = 64; objectW = 128;
+let playerH = 64, playerW = 32;
 let tileSheet = [];
 let tilePosX = [];
 let tilePosY = [];
 let currentMap = [];
+let currentDialogue = [];
 let background;
 let playerX, playerY;
 let oldPlayerX, oldPlayerY;
@@ -17,13 +19,13 @@ let tiles = [];
 
 function collision() {
 
-  let leftPlayerX = Math.floor(playerX / tileW);
+  let leftPlayerX = Math.floor((playerX + (playerW)/2)/ tileW);
 
-  let rightPlayerX = Math.floor((playerX + tileW) / tileW);
+  let rightPlayerX = Math.floor((playerX + playerW) / tileW);
 
   let upperPlayerY = Math.floor(playerY / tileW);
 
-  let lowerPlayerY = Math.floor((playerY + tileW) / tileW);
+  let lowerPlayerY = Math.floor((playerY + playerH) / tileW);
 
 
 
@@ -157,9 +159,9 @@ function drawNewMap() {
   displayNPC();
   playerX = tilePosX[currentMap.playerStartPos];
   playerY = tilePosY[currentMap.playerStartPos];
-  //rect(playerX, playerY, tileW, tileW);
+  
   playerAnimation();
-  console.log("currentmap " + currentMap);
+  
 
 }
 
@@ -169,10 +171,7 @@ function updateMap() {
   for (let i = 0; i < tiles.length; i++) {
     tiles[i].render();
   }
-  // Det her er vores npc for nu
   displayNPC();
-
-  //rect(playerX, playerY, tileW, tileW);
   playerAnimation();
 }
 
@@ -196,25 +195,20 @@ function npcDistance() {
 function displayNPC() {
   if (currentMap == forest) {
     image(lumberJack, tilePosX[currentMap.npcPos], tilePosY[currentMap.npcPos], tileW, tileW);
-    //rect(tilePosX[currentMap.npcPos], tilePosY[currentMap.npcPos], tileW, tileW);
   }
   if (currentMap == port) {
-    image(steamDude, tilePosX[currentMap.npcPos], tilePosY[currentMap.npcPos], tileW, tileW);
-    //rect(tilePosX[currentMap.npcPos], tilePosY[currentMap.npcPos], tileW, tileW);
+    image(steamDude, tilePosX[currentMap.npcPos], tilePosY[currentMap.npcPos], tileW, tileW); 
+    
   }
   if (currentMap == town) {
     image(girl, tilePosX[currentMap.npcPos], tilePosY[currentMap.npcPos], tileW, tileW);
-    //rect(tilePosX[currentMap.npcPos], tilePosY[currentMap.npcPos], tileW, tileW);
+    
   }
   if (currentMap == mine) {
     image(woman, tilePosX[currentMap.npcPos], tilePosY[currentMap.npcPos], tileW, tileW);
-    //rect(tilePosX[currentMap.npcPos], tilePosY[currentMap.npcPos], tileW, tileW);
   }
   if (currentMap == ruin) {
     image(oldMan, tilePosX[currentMap.npcPos], tilePosY[currentMap.npcPos], tileW, tileW);
     //rect(tilePosX[currentMap.npcPos], tilePosY[currentMap.npcPos], tileW, tileW);
   }
-  /*else {
-    rect(tilePosX[currentMap.npcPos], tilePosY[currentMap.npcPos], tileW, tileW);
-  }*/
 }

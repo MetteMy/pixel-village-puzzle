@@ -7,24 +7,24 @@ let updated = false;
 
 function playerMovement() {
 
-    playerState = playerIdle;
+    playerState = graveRobberIdle;
 
     if (keyIsPressed == true) {
         if (keyIsDown(65) || keyIsDown(37)) {//Left
-            playerState = playerRun;
+            playerState = graveRobberWalkL;
             playerX -= playerXSpeed;
         }
         if (keyIsDown(68) || keyIsDown(39)) {//Right
-            playerState = playerRun;
+            playerState = graveRobberWalkR;
             playerX += playerXSpeed;
         }
         if (keyIsDown(87) || keyIsDown(38)) {//Up
-            playerState = playerJump;
+            playerState = graveRobberWalkR;
             playerY -= playerYSpeed;
         }
         if (keyIsDown(83) || keyIsDown(40)) {//Down
+            playerState = graveRobberWalkL;
             playerY += playerYSpeed;
-
         }//WASD & Arrows
 
         update();
@@ -32,7 +32,7 @@ function playerMovement() {
     }
     if (keyIsPressed == false) {
         if (updated == false) {
-            playerState = playerIdle;
+            playerState = graveRobberIdle;
             update();
             updated = true;
         }
@@ -49,21 +49,42 @@ function playerMovement() {
 }
 
 function playerAnimation() {
+    //playerState.length - 1
+    if (playerState == graveRobberWalkR || playerState == graveRobberWalkL) {
+        if (frame < 5) {
+            if (frameCount % 4 == 0) {
+                frame++
+            }
+        }
+        else {
+            frame = 0;
 
-
-    if (frame < playerState.length - 1) {
-        frame++
-
-    }
-    else {
+        }
+    } else {
         frame = 0;
-
     }
-    //console.log("frame " + frame);
 
 
-    image(playerState[frame], playerX, playerY, tileW, tileW);
+    image(playerState, playerX, playerY, tileW, tileW, frame * playerW, 0, playerW, playerH);
 
 
+
+
+    /*
+    
+        if (frame < playerState.length - 1) {
+            frame++
+    
+        }
+        else {
+            frame = 0;
+    
+        }
+        //console.log("frame " + frame);
+    
+    
+        image(playerState[frame], playerX, playerY, tileW, tileW);
+    
+    */
 }
 
