@@ -167,7 +167,7 @@ function drawNewMap() {
 
 function updateMap() {
 
-  image(background, 0, 0, width, height);
+  //image(background, 0, 0, width, height);
   for (let i = 0; i < tiles.length; i++) {
     tiles[i].render();
   }
@@ -190,31 +190,6 @@ function npcDistance() {
   }
 }//calculates player distance from npc so dialogue prompt shows up and can be called
 
-
-function npcDialogue(){
-  let npcText;
-  if (currentMap === forest){
-    npcText = lumberJackDialogue[0];
-  }
-  if (currentMap === town){
-    npcText = girlDialogue[0];
-  }
-  if (currentMap === mine){
-    npcText = womanDialogue[0];
-  }
-  if (currentMap === port){
-    npcText = steamDudeDialogue[0];
-  }
-  if (currentMap === ruin){
-    npcText = oldManDialogue[0];
-  }
-
-  fill(240, 215, 155);
-      rect(width / 2 - 550 / 2, height / 4 * 3 - 250 / 2, 550, 260);
-      fill(0);
-      text(npcText, width / 2 - 550 / 2 , height / 4 * 3 - 250 / 2 , 550, 260);
-      
-}
 
 
 function displayNPC() {
