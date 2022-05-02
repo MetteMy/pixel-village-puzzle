@@ -72,9 +72,9 @@ function displayMissionAndInventory() {
     if (keyIsDown(73)) {
         textSize(15);
         fill(240, 215, 155);
-        rect(0, 0, 200, 80);
+        rect(width / 18, height / 18, 200, 80);
         fill(0);
         text("Inventory: " + inventory, 10, 10, 200, 50);
-        text("Mission: " + missionGoal, 10, 25, 200, 50);
+        text("Mission: " + missionGoal, width / 18, height / 18, 200 - 10, 80 - 10);
     }
 }     
