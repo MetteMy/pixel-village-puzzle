@@ -1,5 +1,5 @@
 
-let mapW = 20, mapH = 9, tileW = 64; objectW = 128;
+let mapW = 20, mapH = 9, tileW, objectW = 128;
 let playerH = 64, playerW = 32;
 let tileSheet = [];
 let tilePosX = [];
