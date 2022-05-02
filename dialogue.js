@@ -48,9 +48,9 @@ function npcDialogue() {
     IsmissionAccomplished();
 
     fill(240, 215, 155);
-    rect(width / 2 - 550 / 2, height / 4 * 3 - 250 / 2, 550, 260);
+    rect(width / 2, height / 4 * 3, 550, 260);
     fill(0);
-    text(npcText, width / 2 - 550 / 2, height / 4 * 3 - 250 / 2, 550, 260);
+    text(npcText, width / 2, height / 4 * 3, 550 - 10, 260 - 10);
     if (currentMap.npcName == missionPerson[progress]) {
         inventory = missionObject[progress];
     }

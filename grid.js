@@ -187,7 +187,7 @@ function npcDistance() {
       npcDialogue();
     }
   }
-}//calculates player distance from npc so dialogue prompt shows up and can be called
+}//calculates player distance from npc & prompts dialogue
 
 
 
