@@ -9,6 +9,7 @@ function setup() {
   playerState = graveRobberIdle;
   progress = 0;
   inventory = "nothing";
+  tileW = windowWidth/mapW;
    
   rectMode(CENTER);
   textAlign(CENTER);
