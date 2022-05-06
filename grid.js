@@ -42,30 +42,23 @@ function collision() {
 
 
 
-  if (upperLeft > 4 || upperRight > 4 || lowerLeft > 4 || lowerRight > 4 || upperLeft2 > 0 || upperRight2 > 0 || lowerLeft2 > 0 || lowerRight2 > 0) { // 4 is the name of the tile
-    //console.log("collision");
+  if (upperLeft > 4 || upperRight > 4 || lowerLeft > 4 || lowerRight > 4 || upperLeft2 > 0 || upperRight2 > 0 || lowerLeft2 > 0 || lowerRight2 > 0) { // 4 is the name of the tile where stuff gets solid at the background map
     playerXSpeed = 0;
     playerYSpeed = 0;
 
     if (oldPlayerY - playerY < 0) { // moving down
-
       playerY -= speed;
 
     }
     if (oldPlayerY - playerY > 0) { // moving up
       playerY += speed;
 
-
     }
     if (oldPlayerX - playerX > 0) { // moving left
-
       playerX += speed;
-
     }
     if (oldPlayerX - playerX < 0) { // moving right
-
       playerX -= speed;
-
     }
 
   }
@@ -91,7 +84,6 @@ class Tile {
   render() {
 
     image(tileSheet[this.type], this.xPos, this.yPos, tileW, tileW);
-
     image(objects[this.object], this.xPos, this.yPos, tileW, tileW);
 
 
@@ -107,7 +99,6 @@ class Tile {
 
 
 function changeMap() {
-
 
   if (playerX < 0 || playerX > width || playerY < 0 || playerY > height) {
     if (playerX < 0) { // left
@@ -138,8 +129,6 @@ function changeMap() {
 }
 
 function drawNewMap() {
-
-  console.log("i'm drawing the map!");
   image(background, 0, 0, width, height);
   tiles.length = 0;
   for (let y = 0; y < mapH; y++) {
@@ -184,7 +173,10 @@ function npcDistance() {
     textSize(20);
     text("Press E", width / 2, height / 4 * 3);
     if (keyIsDown(69)) {//e
+
       npcDialogue();
+
+
     }
   }
 }//calculates player distance from npc & prompts dialogue

@@ -1,5 +1,6 @@
 let startGameBtn;
 
+let progress; 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   currentMap = port;
@@ -7,10 +8,11 @@ function setup() {
   playerYSpeed = 0;
   playerXSpeed = speed;
   playerState = graveRobberIdle;
-  progress = 0;
   inventory = "nothing";
   tileW = windowWidth/mapW;
-   
+  //localStorage.setItem("progress", JSON.stringify(0));
+  isMissionAccomplished = false;
+
   rectMode(CENTER);
   textAlign(CENTER);
 
@@ -42,7 +44,7 @@ function startScreen() {
   text("Creators: Mette & Amelie", 60, 10);
   startGameBtn = createButton('Start Game').style('background-color', "#2B9EB3").style('font-size', '30px').size(200, 80).position((width / 2) - 100, height / 2);
   startGameBtn.mousePressed(function () {
-    startGameBtn.hide();
-    drawNewMap();
+  startGameBtn.hide();
+  drawNewMap();
   })
 }
