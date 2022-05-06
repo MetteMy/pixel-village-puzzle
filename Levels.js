@@ -61,7 +61,7 @@ forest = {
     ],
     npcName: "lumberJack",
     npcPos: 85,
-    playerStartPos: 25,
+    playerStartPos: 59,
 
 
     nextRoom: ["forest", "forest", "town", "forest"],
@@ -93,7 +93,7 @@ ruin = {
     ],
     npcPos: 24,
     npcName: "oldMan",
-    playerStartPos: 75,
+    playerStartPos: 165,
 
     nextRoom: ["ruin", "ruin", "ruin", "town"],
 }
@@ -124,7 +124,7 @@ mine = {
     ],
     npcName: "woman",
     npcPos: 35,
-    playerStartPos: 45,
+    playerStartPos: 40,
 
     nextRoom: ["town", "mine", "mine", "mine"],
 }

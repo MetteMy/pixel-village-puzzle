@@ -59,7 +59,7 @@ function npcDialogue() {
     rect(width / 2, height / 4 * 3, 550, 260);
     fill(0);
     text(npcText, width / 2, height / 4 * 3, 550 - 10, 260 - 10);
-    console.log(progress);
+    
     if (currentMap.npcName == missionPerson[progress]) {
         inventory = missionObject[progress];
     }

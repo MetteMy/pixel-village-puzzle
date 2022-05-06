@@ -38,7 +38,7 @@ function collision() {
   let upperRight2 = currentMap.objects[(upperPlayerY * mapW) + rightPlayerX];
   let lowerLeft2 = currentMap.objects[(lowerPlayerY * mapW) + leftPlayerX];
   let lowerRight2 = currentMap.objects[(lowerPlayerY * mapW) + rightPlayerX];
-  //console.log("upperLeft " + upperLeft + " upperRight " + upperRight + " lowerLeft "+ lowerLeft + " lowerRight "+ lowerRight);
+  
 
 
 
@@ -74,6 +74,7 @@ function collision() {
 
 
 }
+
 class Tile {
   constructor(xPos, yPos, type, object) {
     this.xPos = xPos;
@@ -163,7 +164,7 @@ function updateMap() {
   playerAnimation();
 }
 
-function npcDistance() {
+function npcDistance() {//calculates player distance from npc
   distance = dist(tilePosX[currentMap.npcPos], tilePosY[currentMap.npcPos], playerX, playerY);
   if (distance < 50) {
     strokeWeight(4);
@@ -179,7 +180,7 @@ function npcDistance() {
 
     }
   }
-}//calculates player distance from npc & prompts dialogue
+}
 
 
 
@@ -200,6 +201,6 @@ function displayNPC() {
   }
   if (currentMap == ruin) {
     image(oldMan, tilePosX[currentMap.npcPos], tilePosY[currentMap.npcPos], tileW, tileW);
-    //rect(tilePosX[currentMap.npcPos], tilePosY[currentMap.npcPos], tileW, tileW);
+   
   }
 }
