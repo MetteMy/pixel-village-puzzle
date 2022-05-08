@@ -190,17 +190,14 @@ function displayNPC() {
   }
   if (currentMap == port) {
     image(steamDude, tilePosX[currentMap.npcPos], tilePosY[currentMap.npcPos], tileW, tileW);
-
   }
   if (currentMap == town) {
     image(girl, tilePosX[currentMap.npcPos], tilePosY[currentMap.npcPos], tileW, tileW);
-
   }
   if (currentMap == mine) {
     image(woman, tilePosX[currentMap.npcPos], tilePosY[currentMap.npcPos], tileW, tileW);
   }
   if (currentMap == ruin) {
     image(oldMan, tilePosX[currentMap.npcPos], tilePosY[currentMap.npcPos], tileW, tileW);
-   
   }
 }

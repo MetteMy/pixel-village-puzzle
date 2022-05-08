@@ -49,7 +49,7 @@ function playerMovement() {
 }
 
 function playerAnimation() {
-    //playerState.length - 1
+    
     if (playerState == graveRobberWalkR || playerState == graveRobberWalkL) {
         if (frame < 5) {
             if (frameCount % 4 == 0) {

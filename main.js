@@ -1,5 +1,4 @@
 let startGameBtn;
-
 let progress; 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -10,15 +9,12 @@ function setup() {
   playerState = graveRobberIdle;
   inventory = "nothing";
   tileW = windowWidth/mapW;
-  //localStorage.setItem("progress", JSON.stringify(0));
   isMissionAccomplished = false;
-
   rectMode(CENTER);
   textAlign(CENTER);
 
   playerX = tilePosX[currentMap.playerStartPos];
   playerY = tilePosY[currentMap.playerStartPos];
-  //rect(playerX, playerY, tileW, tileW);
   startScreen();
 }
 

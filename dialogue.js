@@ -14,8 +14,8 @@ steamDudeDialogue = ["Ahoy, Welcome to our small town, have you perhaps seen my 
 
 oldManDialogue = ["Welcome to the ruin, once upon a time, a great castle stood in this valley. but now all there is left is a couple of stones", "When i was young i used to walk 75 miles across a canyon, in a snowstorm, to get to school ", "Yes of course he can have some more ointment. Here it is. Thank you for bringing it to him.", ]
 
-// 
-missionGoal = ["find and return the fishing rod", "Find the girls mother", "Help the sailor get his ointment"]
+
+missionGoal = ["Find and return the fishing rod", "Find the girls mother", "Help the sailor get his ointment"]
 // the person you have to talk to, in order to get the object.
 missionPerson = ["lumberJack", "woman", "oldMan"]
 
